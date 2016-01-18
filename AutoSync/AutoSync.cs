@@ -438,7 +438,7 @@ namespace AutoSync
             //sfup.ExecSqlCmd(supdate);
             //var cmd = new SqlCommand("select distinct uid,cType,cOrderNumber,cEasNewOrder,cGuid,cState,bEnable,CONVERT(char(10),daddtime,120) as dAddtime,dUpdate,cMemo from ( "
             //    +" select top 200 cGuid as uid,'销售出库单' as cType,cOrderNumber,cOrderNumber as cEasNewOrder,cGuid,'未导入' as cstate,bEnable,dDate as dAddtime,dUpdate as dUpdate,'' as cmemo from ss_detail where isnull(bEnable,0)=0 and ISNULL(cguid,'')<>'' order by autoid ) tbl");
-            var cmd = new SqlCommand("select * from wms_m_eas where (ctype='销售出库' or cType='销售退货')and isnull(bEnable,0)=0 and ISNULL(cguid,'')<>'' ");
+            var cmd = new SqlCommand("select * from wms_m_eas where (ctype='销售出库' or cType='销售退货')and isnull(bEnable,0)=0 and ISNULL(cguid,'')<>'' and cOrderNumber<>'' ");
             var sfun = new SyncFunction(_wmsCon);
             return sfun.GetSqlTable(cmd);
         }
