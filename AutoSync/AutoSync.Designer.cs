@@ -453,7 +453,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AutoSync";
-            this.Text = "自动同步";
+            this.Text = "自动同步--销售出库及退货专用";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutoSync_FormClosing);
             this.Load += new System.EventHandler(this.AutoSync_Load);
             this.SizeChanged += new System.EventHandler(this.AutoSync_SizeChanged);

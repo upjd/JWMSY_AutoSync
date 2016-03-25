@@ -9,6 +9,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="cEasNewOrder" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="cGuid" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="iCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cMemo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>

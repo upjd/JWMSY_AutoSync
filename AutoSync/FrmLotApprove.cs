@@ -44,6 +44,7 @@ namespace AutoSync
             var cPwd = Properties.Settings.Default.EasUserPwd;
             var easDataCenter = Properties.Settings.Default.EasDataCenter;
             var easproxy = new EASLoginProxyService();
+            easproxy.Url = Properties.Settings.Default.EasLoginUrl;
             //proxy.Url = Global.oaUrl + "/ormrpc/services/EASLogin?wsdl";
             //WSContext ctx = easproxy.login(name, pwd, "eas", "a", "L2", 2, "BaseDB");
             var ctx = easproxy.login(cName, cPwd, "eas", easDataCenter, "L2", 2, "BaseDB");
@@ -57,6 +58,8 @@ namespace AutoSync
             }
 
             var proxy = new WSWSYofotoFacadeSrvProxyService();
+            proxy.Url = Properties.Settings.Default.EasApproveUrl;
+
             var msg = proxy.auditSaleIssueBill("S.01", cOrderNumber);
             VLogError(@"销售出库" + cOrderNumber, "调用easWebservices结束" + DateTime.Now);
             VLogError(@"销售出库", cOrderNumber + "::" + msg);
